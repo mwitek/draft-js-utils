@@ -193,18 +193,18 @@ class MarkupGenerator {
             }
             let content = encodeContent(text);
             if (style.has(BOLD)) {
-              content = `**${content}**`;
+              content = `**${content.trim()}**`;
             }
             if (style.has(UNDERLINE)) {
               // TODO: encode `+`?
-              content = `++${content}++`;
+              content = `++${content.trim()}++`;
             }
             if (style.has(ITALIC)) {
-              content = `_${content}_`;
+              content = `_${content.trim()}_`;
             }
             if (style.has(STRIKETHROUGH)) {
               // TODO: encode `~`?
-              content = `~~${content}~~`;
+              content = `~~${content.trim()}~~`;
             }
             if (style.has(CODE)) {
               content =
