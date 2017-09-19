@@ -31,7 +31,7 @@ noop.exec = noop;
 
 var defaults = {
   gfm: true,
-  headers: true,
+  headings: true,
   breaks: false,
   pedantic: false,
   smartLists: false,
@@ -201,7 +201,7 @@ Lexer.prototype.token = function(src, top, bq) {
     // heading
     if ((cap = this.rules.heading.exec(src))) {
       src = src.substring(cap[0].length);
-      if (this.options.headers) {
+      if (this.options.headings) {
         this.tokens.push({
           type: 'heading',
           depth: cap[1].length,
